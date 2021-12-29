@@ -3,9 +3,40 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      window.simplexAsyncFunction = function () {
+          Simplex.init({public_key: 'ApiKey eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJ0bmVyIjoiZGJhIiwiaXAiOlsiMS4yLjMuNCJdLCJzYW5kYm94Ijp0cnVlfQ.L1uXemcqBlm2QIrvo42RAmPEwzIi8zOn7DM0jWq5HbY'})
+      };
+  </script>
+  <script src="https://cdn.test-simplexcc.com/sdk/v1/js/sdk.js" async></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Simplex Api Test Page Client side</h1>
+    <hr>
+    <h3>get quote</h3>
+    <form action="/get_quote" method="post">
+      <div class="form-group">
+        <label for="">Fait</label>
+        <select class="form-control" name="" id="">
+          <option>USD</option>
+          <option></option>
+          <option></option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Crypto</label>
+        <select class="form-control" name="" id="">
+          <option>BTC</option>
+          <option></option>
+          <option></option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="get quote">
+      </div>
+
+    </form>
   </body>
 </html>
