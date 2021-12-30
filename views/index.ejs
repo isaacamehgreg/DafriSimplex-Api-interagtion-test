@@ -20,70 +20,88 @@
   <body class="container ">
     <h1>Simplex Api Test Page Client side</h1>
 
-    <div class="card" style="width: 18rem;">
-      <!-- <img src="..." class="card-img-top" alt="..."> -->
-      <div class="card-body">
-        <h5 class="card-title">Get Quote</h5>
-        <form action="/get_quote" method="post">
-          <div class="form-group">
-            <label for="">Fait</label>
-            <select class="form-control" name="" id="">
-              <option value="USD">USD</option>
-              <option></option>
-              <option></option>
-            </select>
-          </div>
-    
-          <div class="form-group">
-            <label for="">Crypto</label>
-            <select class="form-control" name="" id="">
-              <option value="BTC">BTC</option>
-              <option></option>
-              <option></option>
-            </select>
-          </div>
-    
-          <div class="row justify-content-center">
-            <input class="btn btn-outline-info" type="submit" value="get fait quote">
-       
-            <input class="btn btn-outline-info" type="submit" value="get crypto quote">
-          </div>
-    
-        
-        </form>
+    <div class="row">
+      <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">Get Quote</h5>
+          <form action="/get_quote" method="post">
+            <div class="form-group">
+              <label for="">Fait</label>
+              <select class="form-control" name="" id="">
+                <option value="USD">USD</option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="">Crypto</label>
+              <select class="form-control" name="" id="">
+                <option value="BTC">BTC</option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+      
+            <div class="row justify-content-center">
+              <input class="btn btn-outline-info" type="submit" value="get fait quote">
+         
+              <input class="btn btn-outline-info" type="submit" value="get crypto quote">
+            </div>
+      
+          
+          </form>
+        </div>
       </div>
+
+      <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">click checkout on simplex site</h5>
+          <form id="payment_form" action="https://sandbox.test-simplexcc.com/payments/new" method="post">
+            <input type="hidden" name="version" value="1">
+            <input type="hidden" name="partner" value="partner_name">
+            <input type="hidden" name="payment_flow_type" value="wallet">
+            <input type="hidden" name="return_url_success" value="https://dafrixchange">
+            <input type="hidden" name="return_url_fail" value="https://dafribank.com">
+            <input type="hidden" name="payment_id" value="2222cb8e-98fe-4808-b128-ade81ff95d08">
+            <input class="btn btn-primary"type="submit" value="check out">
+            </form>
+        </div>
+        <p ><i style="color:red">kyc is need from the partner for this to work</i></p>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">pop up happens here</h5>
+          <form id="simplex-form">
+            <div id="checkout-element">
+                <!-- checkout will be rendered here -->
+            </div>
+         </form>
+        </div>
+       
+      </div>
+
+
     </div>
-
-   
-    <hr>
-    <h3>get quote</h3>
-
-    <hr>
-
-    <h1>form check out</h1>
  
-      <form id="payment_form" action="https://sandbox.test-simplexcc.com/payments/new" method="post">
-      <input type="hidden" name="version" value="1">
-      <input type="hidden" name="partner" value="partner_name">
-      <input type="hidden" name="payment_flow_type" value="wallet">
-      <input type="hidden" name="return_url_success" value="https://dafrixchange">
-      <input type="hidden" name="return_url_fail" value="https://dafribank.com">
-      <input type="hidden" name="payment_id" value="2222cb8e-98fe-4808-b128-ade81ff95d08">
-      <input class="btn btn-primary"type="submit" value="check out">
-      </form>
+
+  
+
+
+
+ 
+ 
+    
 
       <script type="text/javascript">
        // document.forms["payment_form"].submit();
       </script>
-    <p ><i style="color:red">kyc is need from the partner for this to work</i></p>
-    
-    <hr>
-    <h1>pop-up widget checkout</h1>
-    <form id="simplex-form">
-      <div id="checkout-element">
-          <!-- checkout will be rendered here -->
-      </div>
-  </form>
+
+ 
 
   <script>
 
