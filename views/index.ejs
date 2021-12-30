@@ -19,37 +19,47 @@
   </head>
   <body class="container ">
     <h1>Simplex Api Test Page Client side</h1>
+
+    <div class="card" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">Get Quote</h5>
+        <form action="/get_quote" method="post">
+          <div class="form-group">
+            <label for="">Fait</label>
+            <select class="form-control" name="" id="">
+              <option value="USD">USD</option>
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="">Crypto</label>
+            <select class="form-control" name="" id="">
+              <option value="BTC">BTC</option>
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+    
+          <div class="row justify-content-center">
+            <input class="btn btn-outline-info" type="submit" value="get fait quote">
+       
+            <input class="btn btn-outline-info" type="submit" value="get crypto quote">
+          </div>
+    
+        
+        </form>
+      </div>
+    </div>
+
+   
     <hr>
     <h3>get quote</h3>
-    <form action="/get_quote" method="post">
-      <div class="form-group">
-        <label for="">Fait</label>
-        <select class="form-control" name="" id="">
-          <option value="USD">USD</option>
-          <option></option>
-          <option></option>
-        </select>
-      </div>
 
-      <div class="form-group">
-        <label for="">Crypto</label>
-        <select class="form-control" name="" id="">
-          <option value="BTC">BTC</option>
-          <option></option>
-          <option></option>
-        </select>
-      </div>
-
-      <div class="row justify-content-center">
-        <input class="btn btn-outline-info" type="submit" value="get fait quote">
-   
-        <input class="btn btn-outline-info" type="submit" value="get crypto quote">
-      </div>
-
-      
-
-    </form>
     <hr>
+
     <h1>form check out</h1>
  
       <form id="payment_form" action="https://sandbox.test-simplexcc.com/payments/new" method="post">
