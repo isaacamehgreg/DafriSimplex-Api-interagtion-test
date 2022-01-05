@@ -48,11 +48,11 @@ app.post('/sumsub/test', async function(req, res){
     text: JSON.stringify(req.body)
   };
 
-  await transporter.sendMail(mailOptions, function(error, info){
+   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
     } else {
-      console.log('Email sent: ' + info.response);
+      console.log('Email sent: ' + info.response + JSON.stringify(req.body));
     }
   });
     res.status(404).send('sent');
