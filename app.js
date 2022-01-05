@@ -28,6 +28,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.post('/sumsub/test', function(req, res){
+  var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'blackgenius9000@gmail.com',
+    pass: '1.Alechenu'
+  }
+});
+
+var mailOptions = {
+  from: 'blackgenius9000@gmail.com',
+  to: 'isaacamehgreg@gmail.com',
+  subject: 'Testing Sumsub webhook',
+  text: JSON.stringify(req.body)
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+  res.status(404).send('sent');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
