@@ -30,14 +30,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.post('/sumsub/test', function(req, res){
+app.post('/sumsub/test', async function(req, res){
 
 
-  var transporter = nodemailer.createTransport({
+  var transporter = await nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'blackgenius9000@gmail.com',
-      pass: '1.Alechenu'
+      pass: 'alechenu'
     }
   });
 
@@ -48,7 +48,7 @@ app.post('/sumsub/test', function(req, res){
     text: JSON.stringify(req.body)
   };
 
-  transporter.sendMail(mailOptions, function(error, info){
+  await transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
     } else {
