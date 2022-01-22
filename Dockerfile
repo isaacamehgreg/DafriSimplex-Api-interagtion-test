@@ -1,8 +1,14 @@
-ARG VERSION=10.23.1
-ARG PORT=4200
+# Choose the Image which has Node installed already
+FROM node:alpine
 
-FROM node:${VERSION}-slim
+# COPY all the files from Current Directory into the Container
+COPY ./ ./
 
+# Install the Project Dependencies like Express Framework
 RUN npm install
 
-RUN npm start
+# Tell that this image is going to Open a Port 
+EXPOSE 3000
+
+# Default Command to launch the Application
+CMD ["npm", "start"]
